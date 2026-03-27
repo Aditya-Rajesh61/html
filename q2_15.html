@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Font Customization Tool</title>
+
+<style>
+#preview {
+    margin-top:20px;
+    padding:20px;
+    border:1px solid black;
+    font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Dynamic Font Customization Tool</h2>
+
+<fieldset>
+<legend>Font Controls</legend>
+
+<label>Font Size:</label><br>
+<input type="range" id="sizeSlider" min="10" max="60" value="20"
+oninput="changeFontSize()"><br><br>
+
+<label>Text Color:</label><br>
+<input type="color" id="textColor" onchange="changeTextColor()"><br><br>
+
+<label>Background Color:</label><br>
+<input type="color" id="bgColor" onchange="changeBgColor()"><br><br>
+
+</fieldset>
+
+<div id="preview">
+This is your customizable preview text.
+</div>
+
+<script>
+
+function changeFontSize() {
+    let size = document.getElementById("sizeSlider").value;
+    document.getElementById("preview").style.fontSize = size + "px";
+}
+
+function changeTextColor() {
+    let color = document.getElementById("textColor").value;
+    document.getElementById("preview").style.color = color;
+}
+
+function changeBgColor() {
+    let color = document.getElementById("bgColor").value;
+    document.getElementById("preview").style.backgroundColor = color;
+}
+
+</script>
+
+</body>
+</html>

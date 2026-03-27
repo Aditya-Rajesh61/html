@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Student Registration Portal </title>
+
+<style>
+
+body {
+background-color: skyblue;
+font-family: Arial;
+}
+
+h1 {
+text-align: center;
+}
+
+.nav {
+text-align: center;
+}
+
+a {
+background-color: darkblue;
+color: white;
+padding: 8px;
+text-decoration: none;
+border-radius: 8px;
+margin: 5px;
+}
+
+.section {
+background-color: darkblue;
+color: white;
+padding: 15px;
+margin: 20px;
+border-radius: 5px;
+}
+
+input, select {
+width: 50%;
+margin: 5px;
+padding: 5px;
+}
+
+button {
+padding: 8px;
+}
+
+</style>
+
+<script>
+function message() {
+alert("Form submitted successfully");
+return false;
+}
+</script>
+
+</head>
+
+<body>
+
+<h1> Student Registration Portal </h1>
+
+<div class="nav">
+<a href="#p"> Personal Information </a>
+<a href="#a"> Academic Details </a>
+<a href="#ad"> Address Information </a>
+<a href="#ac"> Account Credentials </a>
+</div>
+
+<form onsubmit="message()">
+
+<div class="section" id="p">
+<h3> Personal Information </h3>
+Full Name:<br>
+<input type="text"><br>
+
+Date Of Birth:<br>
+<input type="date"><br>
+
+Gender: <br>
+<select>
+<option> Male </option>
+<option> Female </option>
+<option> Other </option>
+</select><br>
+
+Email Address:<br>
+<input type="email"><br>
+
+Mobile Number:<br>
+<input type="tel"><br>
+</div>
+
+<div class="section" id="a">
+<h3> Academic Details </h3>
+
+Register Number: <br>
+<input type="text"><br>
+
+Degree Program: <br>
+<input type="text"><br>
+
+Department: <br>
+<input type="text"><br>
+
+Year of Study: <br>
+<input type="text"><br>
+
+</div>
+
+<div class="section" id="ad">
+<h3> Address Information</h3>
+
+Door Number: <br>
+<input type="text"><br>
+
+City: <br>
+<input type="text"><br>
+
+State: <br>
+<input type="text"><br>
+
+Pincode: <br>
+<input type="text"><br>
+</div>
+
+<div class="section" id="ac">
+<h3> Account Credentials </h3>
+
+Username: <br>
+<input type="text"><br>
+
+Password: <br>
+<input type="password"><br>
+
+Confirm Password: <br>
+<input type="password"><br>
+
+<button type="submit">Submit</button>
+
+</div>
+
+</form>
+
+</body>
+</html>
