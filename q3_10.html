@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkbox</title>
+
+<script>
+function showSubjects(){
+
+var subjects = document.getElementsByName("sub");
+
+var arr = [];
+var count = 0;
+
+for(var i=0;i<subjects.length;i++){
+
+if(subjects[i].checked){
+arr.push(subjects[i].value);
+count++;
+}
+
+}
+
+document.getElementById("result").innerHTML =
+"Count = " + count + "<br>" + arr.join(", ");
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Select Subjects</h2>
+
+<input type="checkbox" name="sub" value="Math"> Math <br>
+<input type="checkbox" name="sub" value="Physics"> Physics <br>
+<input type="checkbox" name="sub" value="Chemistry"> Chemistry <br>
+<input type="checkbox" name="sub" value="Biology"> Biology <br><br>
+
+<button onclick="showSubjects()">Show</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

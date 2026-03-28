@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email Generator</title>
+
+<script>
+function generateEmail(btn){
+var form = btn.form;
+
+var first = form.elements["fname"].value;
+var last = form.elements["lname"].value;
+
+var email = first + "." + last + "@park.edu";
+
+document.getElementById("result").innerHTML = email;
+
+form.reset();
+form.elements["fname"].focus();
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Email Address Generator</h2>
+
+<form>
+First Name:
+<input type="text" name="fname"><br><br>
+
+Last Name:
+<input type="text" name="lname"><br><br>
+
+<input type="button" value="Generate" onclick="generateEmail(this)">
+</form>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

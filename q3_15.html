@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Font Tool</title>
+</head>
+
+<body>
+
+<h2>Font Customization</h2>
+
+Font Size:
+<input type="range" id="size" min="10" max="60" oninput="changeSize()"><br><br>
+
+Text Color:
+<input type="color" id="tc" onchange="changeText()"><br><br>
+
+Background Color:
+<input type="color" id="bc" onchange="changeBg()"><br><br>
+
+<div id="preview">Preview Text</div>
+
+<script>
+function changeSize(){
+var s = document.getElementById("size").value;
+document.getElementById("preview").style.fontSize = s + "px";
+}
+
+function changeText(){
+var c = document.getElementById("tc").value;
+document.getElementById("preview").style.color = c;
+}
+
+function changeBg(){
+var c = document.getElementById("bc").value;
+document.getElementById("preview").style.backgroundColor = c;
+}
+</script>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Gallery</title>
+
+<style>
+.gallery{
+position:relative;
+width:500px;
+height:350px;
+border:2px solid black;
+}
+
+.gallery img{
+width:200px;
+height:140px;
+position:absolute;
+cursor:pointer;
+}
+
+#i1{top:20px;left:20px;}
+#i2{top:60px;left:120px;}
+#i3{top:100px;left:220px;}
+</style>
+
+</head>
+
+<body>
+
+<h2>Overlapping Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://picsum.photos/id/1015/200/140" id="i1" onclick="front(this)">
+<img src="https://picsum.photos/id/1016/200/140" id="i2" onclick="front(this)">
+<img src="https://picsum.photos/id/1018/200/140" id="i3" onclick="front(this)">
+
+</div>
+
+<script>
+var topIndex = 1;
+
+function front(img){
+img.style.zIndex = ++topIndex;
+}
+</script>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

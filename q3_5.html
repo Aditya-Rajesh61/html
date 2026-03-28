@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Calculator</title>
+
+<script>
+function calculate(op){
+
+var n1 = parseFloat(document.getElementById("num1").value);
+var n2 = parseFloat(document.getElementById("num2").value);
+var result;
+
+if(op=='+') result = n1 + n2;
+else if(op=='-') result = n1 - n2;
+else if(op=='*') result = n1 * n2;
+else if(op=='/'){
+if(n2==0){
+document.getElementById("result").innerHTML = "Division by zero not allowed";
+return;
+}
+result = n1 / n2;
+}
+
+document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Calculator</h2>
+
+<input type="number" id="num1" step="any"><br><br>
+<input type="number" id="num2" step="any"><br><br>
+
+<button onclick="calculate('+')">Add</button>
+<button onclick="calculate('-')">Subtract</button>
+<button onclick="calculate('*')">Multiply</button>
+<button onclick="calculate('/')">Divide</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

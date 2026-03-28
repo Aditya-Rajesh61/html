@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radio Button</title>
+
+<script>
+function showColor(){
+
+var colors = document.getElementsByName("color");
+var selected = "";
+
+for(var i=0;i<colors.length;i++){
+
+if(colors[i].checked){
+selected = colors[i].value;
+break;
+}
+
+}
+
+document.getElementById("result").innerHTML = selected;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Select Color</h2>
+
+<input type="radio" name="color" value="Red"> Red <br>
+<input type="radio" name="color" value="Green"> Green <br>
+<input type="radio" name="color" value="Blue"> Blue <br><br>
+
+<button onclick="showColor()">Show</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

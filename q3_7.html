@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Print Numbers</title>
+
+<script>
+function printNumbers(){
+
+var N = parseInt(document.getElementById("num").value);
+
+var i = 1;
+var output = "";
+
+while(i <= N){
+
+output = output + i + "<br>";
+i++;
+
+}
+
+document.getElementById("result").innerHTML = output;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Print Numbers</h2>
+
+<input type="text" id="num"><br><br>
+
+<button onclick="printNumbers()">Print</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

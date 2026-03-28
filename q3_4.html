@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rectangle Area</title>
+
+<script>
+function calculateArea(){
+
+var rectLengthInt = parseInt(document.getElementById("l1").value);
+var rectWidthInt = parseInt(document.getElementById("w1").value);
+var areaInt = rectLengthInt * rectWidthInt;
+
+var rectLengthFloat = parseFloat(document.getElementById("l2").value);
+var rectWidthFloat = parseFloat(document.getElementById("w2").value);
+var areaFloat = rectLengthFloat * rectWidthFloat;
+
+document.getElementById("result").innerHTML =
+"Integer Area = " + areaInt + "<br>Float Area = " + areaFloat;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Rectangle Area Calculator</h2>
+
+Integer Length:
+<input type="text" id="l1"><br><br>
+
+Integer Width:
+<input type="text" id="w1"><br><br>
+
+Float Length:
+<input type="text" id="l2"><br><br>
+
+Float Width:
+<input type="text" id="w2"><br><br>
+
+<button onclick="calculateArea()">Calculate</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

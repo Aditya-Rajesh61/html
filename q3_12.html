@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Skills</title>
+
+<script>
+function validateSkills(){
+
+var skills = document.getElementsByName("skill");
+var arr = [];
+
+for(var i=0;i<skills.length;i++){
+if(skills[i].checked){
+arr.push(skills[i].value);
+}
+}
+
+if(arr.length < 3){
+document.getElementById("result").innerHTML =
+"Select at least 3 skills";
+}
+else{
+document.getElementById("result").innerHTML =
+arr.join(", ");
+}
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Job Skills Form</h2>
+
+<input type="checkbox" name="skill" value="JavaScript"> JavaScript <br>
+<input type="checkbox" name="skill" value="Python"> Python <br>
+<input type="checkbox" name="skill" value="Java"> Java <br>
+<input type="checkbox" name="skill" value="SQL"> SQL <br>
+<input type="checkbox" name="skill" value="HTML"> HTML <br><br>
+
+<button onclick="validateSkills()">Submit</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

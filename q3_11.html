@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Interest</title>
+
+<script src="si.js"></script>
+
+<script>
+function showSI(){
+
+var p = parseFloat(document.getElementById("p").value);
+var r = parseFloat(document.getElementById("r").value);
+var t = parseFloat(document.getElementById("t").value);
+
+var result = calculateSI(p, r, t);
+
+document.getElementById("output").innerHTML = result;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Simple Interest Calculator</h2>
+
+Principal:
+<input type="text" id="p"><br><br>
+
+Rate:
+<input type="text" id="r"><br><br>
+
+Time:
+<input type="text" id="t"><br><br>
+
+<button onclick="showSI()">Calculate</button>
+
+<p id="output"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

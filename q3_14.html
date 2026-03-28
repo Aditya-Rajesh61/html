@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Styling</title>
+
+<style>
+.bold{font-weight:bold;}
+.italic{font-style:italic;}
+.smallcaps{font-variant:small-caps;}
+</style>
+
+<script>
+function applyStyle(){
+
+var cls = "";
+
+if(document.getElementById("b").checked) cls += "bold ";
+if(document.getElementById("i").checked) cls += "italic ";
+if(document.getElementById("s").checked) cls += "smallcaps ";
+
+document.getElementById("msg").className = cls;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Text Styling</h2>
+
+<input type="checkbox" id="b"> Bold <br>
+<input type="checkbox" id="i"> Italic <br>
+<input type="checkbox" id="s"> Small Caps <br><br>
+
+<button onclick="applyStyle()">Apply</button>
+
+<div id="msg">Sample Message</div>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

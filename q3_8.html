@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication Table</title>
+
+<script>
+function printTable(){
+
+var num = parseInt(document.getElementById("number").value);
+
+var i = 1;
+var output = "";
+
+do{
+
+output = output + num + " x " + i + " = " + (num * i) + "<br>";
+i++;
+
+}while(i<=10);
+
+document.getElementById("result").innerHTML = output;
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Multiplication Table</h2>
+
+<input type="text" id="number"><br><br>
+
+<button onclick="printTable()">Print</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>

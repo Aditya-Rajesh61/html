@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Order</title>
+
+<script>
+function calculateTotal(){
+
+var items = document.getElementsByName("product");
+var total = 0;
+
+for(var item of items){
+if(item.checked){
+total = total + parseFloat(item.value);
+}
+}
+
+document.getElementById("result").innerHTML =
+"Total Price = ₹ " + total.toFixed(2);
+
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Product Order Form</h2>
+
+<fieldset>
+<legend>Electronics</legend>
+
+<input type="checkbox" name="product" value="50000"> Laptop <br>
+<input type="checkbox" name="product" value="15000"> Tablet <br>
+
+</fieldset>
+
+<fieldset>
+<legend>Accessories</legend>
+
+<input type="checkbox" name="product" value="1000"> Mouse <br>
+<input type="checkbox" name="product" value="2000"> Keyboard <br>
+
+</fieldset>
+
+<br>
+
+<button onclick="calculateTotal()">Calculate</button>
+
+<p id="result"></p>
+
+<br>
+<p align="right">24BCE0942 Aditya Rajesh</p>
+
+</body>
+</html>
