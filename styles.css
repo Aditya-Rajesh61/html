@@ -1,0 +1,233 @@
+:root {
+    --primary-blue: #005bb5;
+    --dark-blue: #003f7d;
+    --light-blue: #e6f0fa;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --gray: #f4f4f4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: var(--gray); color: var(--text-dark); }
+
+header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo { font-size: 1.5rem; font-weight: bold; }
+header nav a { color: var(--white); text-decoration: none; margin-left: 1rem; }
+
+.hero {
+    background: linear-gradient(var(--dark-blue), var(--primary-blue));
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* Category Tabs */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.cat-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--primary-blue);
+    background: transparent;
+    color: var(--primary-blue);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cat-btn.active, .cat-btn:hover { background: var(--primary-blue); color: var(--white); }
+
+/* Layout Grid */
+.content-wrapper { display: flex; max-width: 1200px; margin: 2rem auto; gap: 2rem; padding: 0 1rem; }
+
+/* Filters Sidebar */
+.filters {
+    width: 250px;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.filters h3 { color: var(--dark-blue); margin-bottom: 1rem; }
+.filter-group { margin-bottom: 1.5rem; }
+.filter-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; cursor: pointer; }
+#price-slider { width: 100%; cursor: pointer; }
+
+.filter-title {
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3rem;
+}
+
+.clear-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #111;
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.clear-btn:hover { background: #333; }
+
+/* Car Grid */
+.car-grid { flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+
+.car-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover { transform: translateY(-5px); }
+.car-card img { width: 100%; height: 160px; object-fit: cover; }
+.car-info { padding: 1rem; flex-grow: 1; }
+.car-info h4 { color: var(--dark-blue); font-size: 1.2rem; margin-bottom: 0.5rem; }
+.car-price { font-weight: bold; color: #28a745; margin-bottom: 0.5rem; }
+.car-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag { font-size: 0.75rem; background: var(--light-blue); color: var(--primary-blue); padding: 0.2rem 0.5rem; border-radius: 4px; }
+
+/* Compare Feature Styles */
+.compare-action {
+    padding: 0.8rem 1rem;
+    background: var(--gray);
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.compare-action label { cursor: pointer; display: flex; align-items: center; gap: 0.5rem; color: var(--dark-blue); font-weight: bold; }
+
+#compare-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dark-blue);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 1000;
+}
+
+#compare-btn {
+    background: #28a745; color: var(--white); border: none;
+    padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer;
+    font-weight: bold; transition: 0.2s;
+}
+#compare-btn:disabled { background: #6c757d; cursor: not-allowed; }
+#compare-btn:not(:disabled):hover { background: #218838; }
+
+.compare-table { width: 100%; background: var(--white); border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.compare-table th, .compare-table td { padding: 1.2rem; border: 1px solid #ddd; text-align: center; width: 33.33%; }
+.compare-table th { background: var(--light-blue); color: var(--dark-blue); font-size: 1.2rem; }
+.compare-table img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; }
+.compare-table .spec-label { font-weight: bold; text-align: right; background: var(--gray); color: var(--dark-blue); }
+.compare-table td h3 { margin-bottom: 0.5rem; color: var(--primary-blue); }
+
+/* Detail View */
+.hidden { display: none !important; }
+#detail-view { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+
+.back-btn {
+    background: var(--white); border: 1px solid var(--primary-blue); color: var(--primary-blue);
+    padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-bottom: 1rem;
+}
+
+.car-detail-container { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.detail-header img { width: 100%; height: 400px; object-fit: cover; }
+.detail-body { padding: 2rem; }
+.detail-body h2 { color: var(--dark-blue); font-size: 2rem; margin-bottom: 0.5rem; }
+.detail-price { font-size: 1.5rem; font-weight: bold; color: #28a745; margin-bottom: 1.5rem; }
+
+.detail-section { margin-bottom: 2rem; }
+.detail-section h3 { border-bottom: 2px solid var(--light-blue); padding-bottom: 0.5rem; margin-bottom: 1rem; color: var(--primary-blue); }
+
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.feature-item { background: var(--gray); padding: 0.8rem; border-radius: 4px; }
+
+.variants-table { width: 100%; border-collapse: collapse; }
+.variants-table th, .variants-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #ddd; }
+.variants-table th { background-color: var(--light-blue); color: var(--dark-blue); }
+
+/* Reviews Section */
+.reviews-section { margin-top: 3rem; border-top: 2px solid var(--light-blue); padding-top: 2rem; }
+.reviews-section h3 { color: var(--dark-blue); margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+.review-form { 
+    display: flex; flex-direction: column; gap: 1rem; 
+    background: var(--light-blue); padding: 1.5rem; 
+    border-radius: 8px; margin-bottom: 2rem; 
+}
+.review-form h4 { color: var(--primary-blue); margin-bottom: 0.5rem; }
+.review-form input, .review-form textarea, .review-form select { 
+    padding: 0.8rem; border: 1px solid #bcd1e6; 
+    border-radius: 4px; font-family: inherit; font-size: 1rem;
+}
+.review-form button { 
+    background: var(--primary-blue); color: var(--white); 
+    border: none; padding: 0.8rem; cursor: pointer; 
+    border-radius: 4px; font-weight: bold; transition: 0.2s; 
+}
+.review-form button:hover { background: var(--dark-blue); }
+
+.review-card { 
+    background: var(--white); padding: 1.2rem; 
+    border-radius: 8px; margin-bottom: 1rem; 
+    border-left: 4px solid var(--primary-blue);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.review-card h5 { 
+    color: var(--dark-blue); font-size: 1.1rem; 
+    margin-bottom: 0.5rem; display: flex; 
+    justify-content: space-between; align-items: center;
+}
+.stars { color: #f39c12; letter-spacing: 2px; font-size: 1.2rem; }
+
+footer { background: var(--dark-blue); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
+
+/* Auth Container */
+.auth-container {
+    max-width: 450px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--primary-blue);
+}

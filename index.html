@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueAuto - Find Your Perfect Drive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+        <div class="logo">BlueAuto</div>
+        <nav>
+            <a href="#" onclick="goHome()">Home</a>
+            <a href="#footer">Contact</a>
+            <a href="#" id="nav-auth" onclick="showAuthView()">Login / Register</a>
+            <a href="#" id="nav-logout" class="hidden" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main id="catalog-view">
+        <div class="hero">
+            <h1>Find Your Dream Car</h1>
+            <p>Explore top Sedans, SUVs, and more.</p>
+        </div>
+
+        <div class="categories" id="category-tabs">
+            <button class="cat-btn active" data-category="All">All Cars</button>
+            <button class="cat-btn" data-category="SUV">SUV</button>
+            <button class="cat-btn" data-category="Sedan">Sedan</button>
+            <button class="cat-btn" data-category="Hatchback">Hatchback</button>
+            <button class="cat-btn" data-category="EV">EV</button>
+            <button class="cat-btn" data-category="Luxury">Luxury</button>
+        </div>
+
+        <div class="content-wrapper">
+            <aside class="filters">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label>Max Price: ₹<span id="price-val">100</span> Lakhs</label>
+                    <input type="range" id="price-slider" min="5" max="100" value="100">
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">FUEL TYPE</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" class="fuel-filter" value="Petrol"> Petrol</label><br>
+                        <label><input type="checkbox" class="fuel-filter" value="Diesel"> Diesel</label><br>
+                        <label><input type="checkbox" class="fuel-filter" value="Electric"> Electric</label><br>
+                        <label><input type="checkbox" class="fuel-filter" value="Hybrid"> Hybrid</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">TRANSMISSION</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" class="trans-filter" value="Automatic"> Automatic</label><br>
+                        <label><input type="checkbox" class="trans-filter" value="Manual"> Manual</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">FEATURES</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" class="feature-filter" value="Sunroof"> Sunroof</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Turbocharged"> Turbocharged</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="AWD / 4WD"> AWD / 4WD</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Touchscreen"> Touchscreen</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Cruise Control"> Cruise Control</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="360 Camera"> 360 Camera</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Ventilated Seats"> Ventilated Seats</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="ADAS"> ADAS</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Alloy Wheels"> Alloy Wheels</label><br>
+                        <label><input type="checkbox" class="feature-filter" value="Keyless Entry"> Keyless Entry</label>
+                    </div>
+                </div>
+
+                <button id="clear-filters-btn" class="clear-btn">✕ CLEAR ALL FILTERS</button>
+            </aside>
+
+            <section class="car-grid" id="car-grid">
+                </section>
+        </div>
+    </main>
+
+    <main id="detail-view" class="hidden">
+        <button class="back-btn" onclick="goHome()">← Back to Catalog</button>
+        <div class="car-detail-container" id="car-detail-content">
+            </div>
+    </main>
+
+    <main id="compare-view" class="hidden" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+        <button class="back-btn" onclick="goHome()">← Back to Catalog</button>
+        <h2 style="color: var(--dark-blue); margin-bottom: 1rem;">Compare Cars</h2>
+        <div id="compare-content">
+            </div>
+    </main>
+
+    <div id="compare-bar" class="hidden">
+        <span>Selected: <span id="compare-count">0</span>/2</span>
+        <button id="compare-btn" onclick="showCompareView()" disabled>Compare Now</button>
+    </div>
+<main id="auth-view" class="hidden auth-container">
+        <div id="login-form-container">
+            <h2 style="color: var(--dark-blue); margin-bottom: 1.5rem; text-align: center;">Welcome Back</h2>
+            <form id="login-form" class="review-form">
+                <input type="email" id="login-email" placeholder="Email Address" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p style="margin-top: 1rem; text-align: center; color: #555;">
+                    Don't have an account? <a href="#" onclick="toggleAuthMode()" style="color: var(--primary-blue);">Register here</a>
+                </p>
+            </form>
+        </div>
+
+        <div id="register-form-container" class="hidden">
+            <h2 style="color: var(--dark-blue); margin-bottom: 1.5rem; text-align: center;">Create an Account</h2>
+            <form id="register-form" class="review-form">
+                <input type="text" id="reg-name" placeholder="Full Name" required>
+                <input type="email" id="reg-email" placeholder="Email Address" required>
+                <input type="text" id="reg-address" placeholder="Home Address" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+                <p style="margin-top: 1rem; text-align: center; color: #555;">
+                    Already have an account? <a href="#" onclick="toggleAuthMode()" style="color: var(--primary-blue);">Login here</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <h3>BlueAuto Motors</h3>
+            <p>Your trusted car partner.</p>
+            <p>Contact Us: <strong>+91 98765 43210</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
